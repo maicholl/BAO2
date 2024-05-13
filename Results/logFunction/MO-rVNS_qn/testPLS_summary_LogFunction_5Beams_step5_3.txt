@@ -1,0 +1,33 @@
+############## ITER 0##############
+Number of Visited BACs      : 	1
+Number of non-dominated BACs: 	2
+Number of BACs to be visited: 	2
+Elapsed Time: 	97
+############## ITER 1##############
+Number of Visited BACs      : 	3
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	275
+############## ITER 2##############
+Number of Visited BACs      : 	6
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	1
+Elapsed Time: 	546
+############## ITER 3##############
+Number of Visited BACs      : 	7
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	1
+Elapsed Time: 	638
+############## ITER 4##############
+Number of Visited BACs      : 	8
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	0
+Elapsed Time: 	728
+############## SUMMARY ITARATION 3##############
+Total Obj. Func. Eval.      :	81
+Total Time (secs)           :	728
+Number of Visited BACs      : 	8
+Number of non-dominated BACs: 	1
+Total Func. Eval. from first iteration: 714
+Total Time elapsed from first iteration (secs)           :	8186
+95	125	210	245	335	0	0	0	76.0	56.9479	41.1061	0.6023195258245255

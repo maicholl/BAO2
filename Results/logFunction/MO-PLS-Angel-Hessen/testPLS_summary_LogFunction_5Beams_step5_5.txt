@@ -1,0 +1,123 @@
+############## ITER 0##############
+Number of Visited BACs      : 	1
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	1
+Elapsed Time: 	52
+############## ITER 1##############
+Number of Visited BACs      : 	2
+Number of non-dominated BACs: 	2
+Number of BACs to be visited: 	2
+Elapsed Time: 	103
+############## ITER 2##############
+Number of Visited BACs      : 	4
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	201
+############## ITER 3##############
+Number of Visited BACs      : 	7
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	5
+Elapsed Time: 	350
+############## ITER 4##############
+Number of Visited BACs      : 	12
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	5
+Elapsed Time: 	591
+############## ITER 5##############
+Number of Visited BACs      : 	17
+Number of non-dominated BACs: 	8
+Number of BACs to be visited: 	8
+Elapsed Time: 	830
+############## ITER 6##############
+Number of Visited BACs      : 	25
+Number of non-dominated BACs: 	8
+Number of BACs to be visited: 	8
+Elapsed Time: 	1214
+############## ITER 7##############
+Number of Visited BACs      : 	33
+Number of non-dominated BACs: 	6
+Number of BACs to be visited: 	6
+Elapsed Time: 	1599
+############## ITER 8##############
+Number of Visited BACs      : 	39
+Number of non-dominated BACs: 	2
+Number of BACs to be visited: 	2
+Elapsed Time: 	1887
+############## ITER 9##############
+Number of Visited BACs      : 	41
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	1
+Elapsed Time: 	1983
+############## ITER 10##############
+Number of Visited BACs      : 	42
+Number of non-dominated BACs: 	2
+Number of BACs to be visited: 	2
+Elapsed Time: 	2031
+############## ITER 11##############
+Number of Visited BACs      : 	44
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	2128
+############## ITER 12##############
+Number of Visited BACs      : 	47
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	2272
+############## ITER 13##############
+Number of Visited BACs      : 	50
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	2415
+############## ITER 14##############
+Number of Visited BACs      : 	53
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	2561
+############## ITER 15##############
+Number of Visited BACs      : 	56
+Number of non-dominated BACs: 	2
+Number of BACs to be visited: 	2
+Elapsed Time: 	2705
+############## ITER 16##############
+Number of Visited BACs      : 	58
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	2803
+############## ITER 17##############
+Number of Visited BACs      : 	61
+Number of non-dominated BACs: 	2
+Number of BACs to be visited: 	2
+Elapsed Time: 	2948
+############## ITER 18##############
+Number of Visited BACs      : 	63
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	3
+Elapsed Time: 	3048
+############## ITER 19##############
+Number of Visited BACs      : 	66
+Number of non-dominated BACs: 	6
+Number of BACs to be visited: 	2
+Elapsed Time: 	3191
+############## ITER 20##############
+Number of Visited BACs      : 	68
+Number of non-dominated BACs: 	6
+Number of BACs to be visited: 	1
+Elapsed Time: 	3287
+############## ITER 21##############
+Number of Visited BACs      : 	69
+Number of non-dominated BACs: 	6
+Number of BACs to be visited: 	0
+Elapsed Time: 	3333
+############## SUMMARY ITARATION 5##############
+Total Obj. Func. Eval.      :	691
+Total Time (secs)           :	3333
+Number of Visited BACs      : 	69
+Number of non-dominated BACs: 	6
+Total Func. Eval. from first iteration: 6516
+Total Time elapsed from first iteration (secs)           :	32553
+40	250	275	300	335	0	0	0	76.0	56.9534	41.3815	0.6057401645167798
+35	245	275	300	335	0	0	0	76.0	56.9969	41.3591	0.6079150622501799
+35	250	275	300	335	0	0	0	76.0	56.9475	41.3838	0.6054373150610001
+35	245	275	300	330	0	0	0	76.0	56.9872	41.3729	0.6075300482516807
+35	250	275	300	330	0	0	0	76.0	56.9355	41.3936	0.6048804123975006
+35	255	275	300	330	0	0	0	76.0	56.9264	41.4537	0.6050634050691188

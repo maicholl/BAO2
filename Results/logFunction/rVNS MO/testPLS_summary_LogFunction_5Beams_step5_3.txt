@@ -1,0 +1,599 @@
+############## ITER 142##############
+Number of Visited BACs      : 	1
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	1
+Elapsed Time: 	29
+############## ITER 143##############
+Number of Visited BACs      : 	2
+Number of non-dominated BACs: 	2
+Number of BACs to be visited: 	1
+Elapsed Time: 	42
+############## ITER 144##############
+Number of Visited BACs      : 	3
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	1
+Elapsed Time: 	69
+############## ITER 145##############
+Number of Visited BACs      : 	4
+Number of non-dominated BACs: 	4
+Number of BACs to be visited: 	1
+Elapsed Time: 	81
+############## ITER 146##############
+Number of Visited BACs      : 	5
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	1
+Elapsed Time: 	144
+############## ITER 147##############
+Number of Visited BACs      : 	6
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	1
+Elapsed Time: 	179
+############## ITER 148##############
+Number of Visited BACs      : 	7
+Number of non-dominated BACs: 	6
+Number of BACs to be visited: 	1
+Elapsed Time: 	271
+############## ITER 149##############
+Number of Visited BACs      : 	8
+Number of non-dominated BACs: 	7
+Number of BACs to be visited: 	1
+Elapsed Time: 	293
+############## ITER 150##############
+Number of Visited BACs      : 	9
+Number of non-dominated BACs: 	7
+Number of BACs to be visited: 	1
+Elapsed Time: 	305
+############## ITER 151##############
+Number of Visited BACs      : 	10
+Number of non-dominated BACs: 	8
+Number of BACs to be visited: 	1
+Elapsed Time: 	317
+############## ITER 152##############
+Number of Visited BACs      : 	11
+Number of non-dominated BACs: 	8
+Number of BACs to be visited: 	1
+Elapsed Time: 	329
+############## ITER 153##############
+Number of Visited BACs      : 	12
+Number of non-dominated BACs: 	8
+Number of BACs to be visited: 	1
+Elapsed Time: 	365
+############## ITER 154##############
+Number of Visited BACs      : 	13
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	1
+Elapsed Time: 	379
+############## ITER 155##############
+Number of Visited BACs      : 	14
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	1
+Elapsed Time: 	434
+############## ITER 156##############
+Number of Visited BACs      : 	15
+Number of non-dominated BACs: 	6
+Number of BACs to be visited: 	1
+Elapsed Time: 	446
+############## ITER 157##############
+Number of Visited BACs      : 	16
+Number of non-dominated BACs: 	7
+Number of BACs to be visited: 	1
+Elapsed Time: 	473
+############## ITER 158##############
+Number of Visited BACs      : 	17
+Number of non-dominated BACs: 	7
+Number of BACs to be visited: 	1
+Elapsed Time: 	527
+############## ITER 159##############
+Number of Visited BACs      : 	18
+Number of non-dominated BACs: 	7
+Number of BACs to be visited: 	1
+Elapsed Time: 	554
+############## ITER 160##############
+Number of Visited BACs      : 	19
+Number of non-dominated BACs: 	8
+Number of BACs to be visited: 	1
+Elapsed Time: 	594
+############## ITER 161##############
+Number of Visited BACs      : 	20
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	1
+Elapsed Time: 	620
+############## ITER 162##############
+Number of Visited BACs      : 	21
+Number of non-dominated BACs: 	6
+Number of BACs to be visited: 	1
+Elapsed Time: 	634
+############## ITER 163##############
+Number of Visited BACs      : 	22
+Number of non-dominated BACs: 	7
+Number of BACs to be visited: 	1
+Elapsed Time: 	648
+############## ITER 164##############
+Number of Visited BACs      : 	23
+Number of non-dominated BACs: 	8
+Number of BACs to be visited: 	1
+Elapsed Time: 	780
+############## ITER 165##############
+Number of Visited BACs      : 	24
+Number of non-dominated BACs: 	9
+Number of BACs to be visited: 	1
+Elapsed Time: 	819
+############## ITER 166##############
+Number of Visited BACs      : 	25
+Number of non-dominated BACs: 	10
+Number of BACs to be visited: 	1
+Elapsed Time: 	846
+############## ITER 167##############
+Number of Visited BACs      : 	26
+Number of non-dominated BACs: 	11
+Number of BACs to be visited: 	1
+Elapsed Time: 	872
+############## ITER 168##############
+Number of Visited BACs      : 	27
+Number of non-dominated BACs: 	11
+Number of BACs to be visited: 	1
+Elapsed Time: 	885
+############## ITER 169##############
+Number of Visited BACs      : 	28
+Number of non-dominated BACs: 	12
+Number of BACs to be visited: 	1
+Elapsed Time: 	920
+############## ITER 170##############
+Number of Visited BACs      : 	29
+Number of non-dominated BACs: 	13
+Number of BACs to be visited: 	1
+Elapsed Time: 	995
+############## ITER 171##############
+Number of Visited BACs      : 	30
+Number of non-dominated BACs: 	14
+Number of BACs to be visited: 	1
+Elapsed Time: 	1020
+############## ITER 172##############
+Number of Visited BACs      : 	31
+Number of non-dominated BACs: 	12
+Number of BACs to be visited: 	1
+Elapsed Time: 	1047
+############## ITER 173##############
+Number of Visited BACs      : 	32
+Number of non-dominated BACs: 	11
+Number of BACs to be visited: 	1
+Elapsed Time: 	1087
+############## ITER 174##############
+Number of Visited BACs      : 	33
+Number of non-dominated BACs: 	12
+Number of BACs to be visited: 	1
+Elapsed Time: 	1115
+############## ITER 175##############
+Number of Visited BACs      : 	34
+Number of non-dominated BACs: 	13
+Number of BACs to be visited: 	1
+Elapsed Time: 	1141
+############## ITER 176##############
+Number of Visited BACs      : 	35
+Number of non-dominated BACs: 	13
+Number of BACs to be visited: 	1
+Elapsed Time: 	1206
+############## ITER 177##############
+Number of Visited BACs      : 	36
+Number of non-dominated BACs: 	14
+Number of BACs to be visited: 	1
+Elapsed Time: 	1233
+############## ITER 178##############
+Number of Visited BACs      : 	37
+Number of non-dominated BACs: 	15
+Number of BACs to be visited: 	1
+Elapsed Time: 	1273
+############## ITER 179##############
+Number of Visited BACs      : 	38
+Number of non-dominated BACs: 	16
+Number of BACs to be visited: 	1
+Elapsed Time: 	1287
+############## ITER 180##############
+Number of Visited BACs      : 	39
+Number of non-dominated BACs: 	16
+Number of BACs to be visited: 	1
+Elapsed Time: 	1429
+############## ITER 181##############
+Number of Visited BACs      : 	40
+Number of non-dominated BACs: 	16
+Number of BACs to be visited: 	1
+Elapsed Time: 	1442
+############## ITER 182##############
+Number of Visited BACs      : 	41
+Number of non-dominated BACs: 	17
+Number of BACs to be visited: 	1
+Elapsed Time: 	1457
+############## ITER 183##############
+Number of Visited BACs      : 	42
+Number of non-dominated BACs: 	16
+Number of BACs to be visited: 	1
+Elapsed Time: 	1484
+############## ITER 184##############
+Number of Visited BACs      : 	43
+Number of non-dominated BACs: 	17
+Number of BACs to be visited: 	1
+Elapsed Time: 	1512
+############## ITER 185##############
+Number of Visited BACs      : 	44
+Number of non-dominated BACs: 	18
+Number of BACs to be visited: 	1
+Elapsed Time: 	1526
+############## ITER 186##############
+Number of Visited BACs      : 	45
+Number of non-dominated BACs: 	19
+Number of BACs to be visited: 	1
+Elapsed Time: 	1540
+############## ITER 187##############
+Number of Visited BACs      : 	46
+Number of non-dominated BACs: 	20
+Number of BACs to be visited: 	1
+Elapsed Time: 	1568
+############## ITER 188##############
+Number of Visited BACs      : 	47
+Number of non-dominated BACs: 	21
+Number of BACs to be visited: 	1
+Elapsed Time: 	1582
+############## ITER 189##############
+Number of Visited BACs      : 	48
+Number of non-dominated BACs: 	22
+Number of BACs to be visited: 	1
+Elapsed Time: 	1607
+############## ITER 190##############
+Number of Visited BACs      : 	49
+Number of non-dominated BACs: 	20
+Number of BACs to be visited: 	1
+Elapsed Time: 	1732
+############## ITER 191##############
+Number of Visited BACs      : 	50
+Number of non-dominated BACs: 	20
+Number of BACs to be visited: 	1
+Elapsed Time: 	1746
+############## ITER 192##############
+Number of Visited BACs      : 	51
+Number of non-dominated BACs: 	18
+Number of BACs to be visited: 	1
+Elapsed Time: 	1790
+############## ITER 193##############
+Number of Visited BACs      : 	52
+Number of non-dominated BACs: 	17
+Number of BACs to be visited: 	1
+Elapsed Time: 	1890
+############## ITER 194##############
+Number of Visited BACs      : 	53
+Number of non-dominated BACs: 	16
+Number of BACs to be visited: 	1
+Elapsed Time: 	1904
+############## ITER 195##############
+Number of Visited BACs      : 	54
+Number of non-dominated BACs: 	16
+Number of BACs to be visited: 	1
+Elapsed Time: 	1918
+############## ITER 196##############
+Number of Visited BACs      : 	55
+Number of non-dominated BACs: 	17
+Number of BACs to be visited: 	1
+Elapsed Time: 	1931
+############## ITER 197##############
+Number of Visited BACs      : 	56
+Number of non-dominated BACs: 	17
+Number of BACs to be visited: 	1
+Elapsed Time: 	1985
+############## ITER 198##############
+Number of Visited BACs      : 	57
+Number of non-dominated BACs: 	18
+Number of BACs to be visited: 	1
+Elapsed Time: 	2053
+############## ITER 199##############
+Number of Visited BACs      : 	58
+Number of non-dominated BACs: 	19
+Number of BACs to be visited: 	1
+Elapsed Time: 	2093
+############## ITER 200##############
+Number of Visited BACs      : 	59
+Number of non-dominated BACs: 	19
+Number of BACs to be visited: 	1
+Elapsed Time: 	2159
+############## ITER 201##############
+Number of Visited BACs      : 	60
+Number of non-dominated BACs: 	18
+Number of BACs to be visited: 	1
+Elapsed Time: 	2172
+############## ITER 202##############
+Number of Visited BACs      : 	61
+Number of non-dominated BACs: 	18
+Number of BACs to be visited: 	1
+Elapsed Time: 	2198
+############## ITER 203##############
+Number of Visited BACs      : 	62
+Number of non-dominated BACs: 	18
+Number of BACs to be visited: 	1
+Elapsed Time: 	2237
+############## ITER 204##############
+Number of Visited BACs      : 	63
+Number of non-dominated BACs: 	19
+Number of BACs to be visited: 	1
+Elapsed Time: 	2305
+############## ITER 205##############
+Number of Visited BACs      : 	64
+Number of non-dominated BACs: 	19
+Number of BACs to be visited: 	1
+Elapsed Time: 	2445
+############## ITER 206##############
+Number of Visited BACs      : 	65
+Number of non-dominated BACs: 	20
+Number of BACs to be visited: 	1
+Elapsed Time: 	2473
+############## ITER 207##############
+Number of Visited BACs      : 	66
+Number of non-dominated BACs: 	21
+Number of BACs to be visited: 	1
+Elapsed Time: 	2500
+############## ITER 208##############
+Number of Visited BACs      : 	67
+Number of non-dominated BACs: 	21
+Number of BACs to be visited: 	1
+Elapsed Time: 	2539
+############## ITER 209##############
+Number of Visited BACs      : 	68
+Number of non-dominated BACs: 	21
+Number of BACs to be visited: 	1
+Elapsed Time: 	2566
+############## ITER 210##############
+Number of Visited BACs      : 	69
+Number of non-dominated BACs: 	21
+Number of BACs to be visited: 	1
+Elapsed Time: 	2620
+############## ITER 211##############
+Number of Visited BACs      : 	70
+Number of non-dominated BACs: 	19
+Number of BACs to be visited: 	1
+Elapsed Time: 	2634
+############## ITER 212##############
+Number of Visited BACs      : 	71
+Number of non-dominated BACs: 	19
+Number of BACs to be visited: 	1
+Elapsed Time: 	2674
+############## ITER 213##############
+Number of Visited BACs      : 	72
+Number of non-dominated BACs: 	19
+Number of BACs to be visited: 	1
+Elapsed Time: 	2702
+############## ITER 214##############
+Number of Visited BACs      : 	73
+Number of non-dominated BACs: 	19
+Number of BACs to be visited: 	1
+Elapsed Time: 	2770
+############## ITER 215##############
+Number of Visited BACs      : 	74
+Number of non-dominated BACs: 	20
+Number of BACs to be visited: 	1
+Elapsed Time: 	2867
+############## ITER 216##############
+Number of Visited BACs      : 	75
+Number of non-dominated BACs: 	21
+Number of BACs to be visited: 	1
+Elapsed Time: 	3007
+############## ITER 217##############
+Number of Visited BACs      : 	76
+Number of non-dominated BACs: 	22
+Number of BACs to be visited: 	1
+Elapsed Time: 	3036
+############## ITER 218##############
+Number of Visited BACs      : 	77
+Number of non-dominated BACs: 	22
+Number of BACs to be visited: 	1
+Elapsed Time: 	3104
+############## ITER 219##############
+Number of Visited BACs      : 	78
+Number of non-dominated BACs: 	23
+Number of BACs to be visited: 	1
+Elapsed Time: 	3118
+############## ITER 220##############
+Number of Visited BACs      : 	79
+Number of non-dominated BACs: 	23
+Number of BACs to be visited: 	1
+Elapsed Time: 	3188
+############## ITER 221##############
+Number of Visited BACs      : 	80
+Number of non-dominated BACs: 	24
+Number of BACs to be visited: 	1
+Elapsed Time: 	3215
+############## ITER 222##############
+Number of Visited BACs      : 	81
+Number of non-dominated BACs: 	25
+Number of BACs to be visited: 	1
+Elapsed Time: 	3228
+############## ITER 223##############
+Number of Visited BACs      : 	82
+Number of non-dominated BACs: 	26
+Number of BACs to be visited: 	1
+Elapsed Time: 	3269
+############## ITER 224##############
+Number of Visited BACs      : 	83
+Number of non-dominated BACs: 	27
+Number of BACs to be visited: 	1
+Elapsed Time: 	3294
+############## ITER 225##############
+Number of Visited BACs      : 	84
+Number of non-dominated BACs: 	28
+Number of BACs to be visited: 	1
+Elapsed Time: 	3333
+############## ITER 226##############
+Number of Visited BACs      : 	85
+Number of non-dominated BACs: 	28
+Number of BACs to be visited: 	1
+Elapsed Time: 	3372
+############## ITER 227##############
+Number of Visited BACs      : 	86
+Number of non-dominated BACs: 	26
+Number of BACs to be visited: 	1
+Elapsed Time: 	3386
+############## ITER 228##############
+Number of Visited BACs      : 	87
+Number of non-dominated BACs: 	27
+Number of BACs to be visited: 	1
+Elapsed Time: 	3480
+############## ITER 229##############
+Number of Visited BACs      : 	88
+Number of non-dominated BACs: 	28
+Number of BACs to be visited: 	1
+Elapsed Time: 	3522
+############## ITER 230##############
+Number of Visited BACs      : 	89
+Number of non-dominated BACs: 	29
+Number of BACs to be visited: 	1
+Elapsed Time: 	3536
+############## ITER 231##############
+Number of Visited BACs      : 	90
+Number of non-dominated BACs: 	28
+Number of BACs to be visited: 	1
+Elapsed Time: 	3602
+############## ITER 232##############
+Number of Visited BACs      : 	91
+Number of non-dominated BACs: 	28
+Number of BACs to be visited: 	1
+Elapsed Time: 	3667
+############## ITER 233##############
+Number of Visited BACs      : 	92
+Number of non-dominated BACs: 	29
+Number of BACs to be visited: 	1
+Elapsed Time: 	3694
+############## ITER 234##############
+Number of Visited BACs      : 	93
+Number of non-dominated BACs: 	30
+Number of BACs to be visited: 	1
+Elapsed Time: 	3734
+############## ITER 235##############
+Number of Visited BACs      : 	94
+Number of non-dominated BACs: 	31
+Number of BACs to be visited: 	1
+Elapsed Time: 	3761
+############## ITER 236##############
+Number of Visited BACs      : 	95
+Number of non-dominated BACs: 	32
+Number of BACs to be visited: 	1
+Elapsed Time: 	3774
+############## ITER 237##############
+Number of Visited BACs      : 	96
+Number of non-dominated BACs: 	33
+Number of BACs to be visited: 	1
+Elapsed Time: 	3801
+############## ITER 238##############
+Number of Visited BACs      : 	97
+Number of non-dominated BACs: 	34
+Number of BACs to be visited: 	1
+Elapsed Time: 	3870
+############## ITER 239##############
+Number of Visited BACs      : 	98
+Number of non-dominated BACs: 	35
+Number of BACs to be visited: 	1
+Elapsed Time: 	3925
+############## ITER 240##############
+Number of Visited BACs      : 	99
+Number of non-dominated BACs: 	35
+Number of BACs to be visited: 	1
+Elapsed Time: 	3952
+############## ITER 241##############
+Number of Visited BACs      : 	100
+Number of non-dominated BACs: 	33
+Number of BACs to be visited: 	1
+Elapsed Time: 	3980
+############## ITER 242##############
+Number of Visited BACs      : 	101
+Number of non-dominated BACs: 	31
+Number of BACs to be visited: 	1
+Elapsed Time: 	4008
+############## ITER 243##############
+Number of Visited BACs      : 	102
+Number of non-dominated BACs: 	30
+Number of BACs to be visited: 	1
+Elapsed Time: 	4132
+############## ITER 244##############
+Number of Visited BACs      : 	103
+Number of non-dominated BACs: 	31
+Number of BACs to be visited: 	1
+Elapsed Time: 	4241
+############## ITER 245##############
+Number of Visited BACs      : 	104
+Number of non-dominated BACs: 	30
+Number of BACs to be visited: 	1
+Elapsed Time: 	4270
+############## ITER 246##############
+Number of Visited BACs      : 	105
+Number of non-dominated BACs: 	29
+Number of BACs to be visited: 	1
+Elapsed Time: 	4283
+############## ITER 247##############
+Number of Visited BACs      : 	106
+Number of non-dominated BACs: 	28
+Number of BACs to be visited: 	1
+Elapsed Time: 	4311
+############## ITER 248##############
+Number of Visited BACs      : 	107
+Number of non-dominated BACs: 	29
+Number of BACs to be visited: 	1
+Elapsed Time: 	4364
+############## ITER 249##############
+Number of Visited BACs      : 	108
+Number of non-dominated BACs: 	29
+Number of BACs to be visited: 	1
+Elapsed Time: 	4418
+############## ITER 250##############
+Number of Visited BACs      : 	109
+Number of non-dominated BACs: 	26
+Number of BACs to be visited: 	1
+Elapsed Time: 	4460
+############## ITER 251##############
+Number of Visited BACs      : 	110
+Number of non-dominated BACs: 	27
+Number of BACs to be visited: 	1
+Elapsed Time: 	4503
+############## ITER 252##############
+Number of Visited BACs      : 	111
+Number of non-dominated BACs: 	27
+Number of BACs to be visited: 	1
+Elapsed Time: 	4530
+############## ITER 253##############
+Number of Visited BACs      : 	112
+Number of non-dominated BACs: 	27
+Number of BACs to be visited: 	1
+Elapsed Time: 	4566
+############## ITER 254##############
+Number of Visited BACs      : 	113
+Number of non-dominated BACs: 	27
+Number of BACs to be visited: 	0
+Elapsed Time: 	4704
+############## SUMMARY ITARATION 3##############
+Total Obj. Func. Eval.      :	350
+Total Time (secs)           :	4704
+Number of Visited BACs      : 	113
+Number of non-dominated BACs: 	27
+Total Func. Eval. from first iteration: 723
+Total Time elapsed from first iteration (secs)           :	10363
+70	195	260	265	275	0	0	0	76.0	49.7465	27.0697	0.21400204529944983
+70	80	195	260	275	0	0	0	76.0	49.748	27.044	0.21398746094207355
+70	80	190	260	275	0	0	0	76.0	49.7719	27.041	0.214683271970332
+65	80	190	260	275	0	0	0	76.0	49.681	27.0948	0.21214375009722403
+65	75	190	260	275	0	0	0	76.0	49.6962	27.0733	0.2125378411894044
+85	185	230	270	325	0	0	0	76.0	49.2549	27.4717	0.20090824719101133
+80	185	240	270	315	0	0	0	76.0	49.3614	27.3054	0.20348592912107763
+75	185	240	270	315	0	0	0	76.0	49.3709	27.2817	0.20369717560526
+75	185	235	270	315	0	0	0	76.0	49.3335	27.3193	0.20273579806552283
+80	185	235	270	315	0	0	0	76.0	49.3265	27.3443	0.20259906804243102
+50	80	180	270	325	0	0	0	76.0	49.2622	27.4504	0.20105955498797942
+45	75	180	270	325	0	0	0	76.0	49.2706	27.4322	0.20124925337435118
+40	75	180	270	325	0	0	0	76.0	49.2734	27.3736	0.2011866426769861
+45	185	250	270	325	0	0	0	76.0	49.2089	27.526	0.19976615439052034
+45	185	245	270	325	0	0	0	76.0	49.2211	27.5178	0.20008341428870685
+45	110	185	245	270	0	0	0	76.0	49.3978	27.2699	0.20442753179021153
+40	105	180	245	270	0	0	0	76.0	49.3735	27.2774	0.20376022209077788
+40	105	180	240	270	0	0	0	76.0	49.363	27.2975	0.20351224004940205
+45	105	180	240	270	0	0	0	76.0	49.3997	27.2615	0.20446141925509714
+65	90	185	245	275	0	0	0	76.0	49.7198	27.0718	0.2132242268696709
+70	90	185	245	275	0	0	0	76.0	49.7314	27.071	0.2135621260421403
+75	140	185	255	270	0	0	0	76.0	49.5013	27.0979	0.20696654754248267
+70	140	185	260	270	0	0	0	76.0	49.4587	27.1208	0.2058054806874753
+65	145	185	255	270	0	0	0	76.0	49.407	27.1595	0.20442969827993826
+65	145	185	260	270	0	0	0	76.0	49.4036	27.1624	0.20434036145565768
+65	145	185	265	270	0	0	0	76.0	49.4008	27.1753	0.20429119425036713
+65	140	185	265	270	0	0	0	76.0	49.4162	27.147	0.2046608763996607

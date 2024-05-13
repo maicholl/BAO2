@@ -1,0 +1,5 @@
+############## ITER 9##############
+Total Obj. Func. Eval.      :	831
+Total Time (secs)           :	26191
+Total Objective Function Evaluations (Cummulative):	6930
+Total Time (cummulative):	210528194

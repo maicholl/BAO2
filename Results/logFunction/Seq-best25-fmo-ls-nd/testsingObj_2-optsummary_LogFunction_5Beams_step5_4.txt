@@ -1,0 +1,55 @@
+############## ITER 4##############
+Total Obj. Func. Eval.      :	30
+Total Time (secs)           :	156
+Total Objective Function Evaluations (Cummulative):	13038
+Total Time (cummulative):	6127460
+############## ITER 4##############
+Total Obj. Func. Eval.      :	54
+Total Time (secs)           :	146
+Total Objective Function Evaluations (Cummulative):	13092
+Total Time (cummulative):	6274166
+############## ITER 4##############
+Total Obj. Func. Eval.      :	77
+Total Time (secs)           :	138
+Total Objective Function Evaluations (Cummulative):	13169
+Total Time (cummulative):	6412850
+############## ITER 4##############
+Total Obj. Func. Eval.      :	99
+Total Time (secs)           :	130
+Total Objective Function Evaluations (Cummulative):	13268
+Total Time (cummulative):	6543006
+############## ITER 4##############
+Total Obj. Func. Eval.      :	120
+Total Time (secs)           :	125
+Total Objective Function Evaluations (Cummulative):	13388
+Total Time (cummulative):	6668516
+############## ITER 4##############
+Total Obj. Func. Eval.      :	141
+Total Time (secs)           :	128
+Total Objective Function Evaluations (Cummulative):	13529
+Total Time (cummulative):	6796694
+############## ITER 4##############
+Total Obj. Func. Eval.      :	141
+Total Time (secs)           :	0
+Total Objective Function Evaluations (Cummulative):	13670
+Total Time (cummulative):	6796819
+############## ITER 4##############
+Total Obj. Func. Eval.      :	141
+Total Time (secs)           :	0
+Total Objective Function Evaluations (Cummulative):	13811
+Total Time (cummulative):	6796948
+############## ITER 4##############
+Total Obj. Func. Eval.      :	162
+Total Time (secs)           :	129
+Total Objective Function Evaluations (Cummulative):	13973
+Total Time (cummulative):	6926708
+############## ITER 4##############
+Total Obj. Func. Eval.      :	183
+Total Time (secs)           :	126
+Total Objective Function Evaluations (Cummulative):	14156
+Total Time (cummulative):	7053459
+############## ITER 4##############
+Total Obj. Func. Eval.      :	183
+Total Time (secs)           :	1082
+Total Objective Function Evaluations (Cummulative):	14339
+Total Time (cummulative):	7053459

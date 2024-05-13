@@ -1,0 +1,18 @@
+project-root-directory/
++ build/
++ dist/
++ checkFiles/
++ nbproject/
+  build-impl.xml
+  + private/
+  + project.properties
+  + project.xml
++ src/
++ test/
++ build.xml
++ Results/logFunction/
+*.txt
+inputFile_[1].txt
+*.dat
+*.mod
+*.sh

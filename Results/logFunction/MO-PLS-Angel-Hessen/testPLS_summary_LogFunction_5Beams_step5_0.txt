@@ -1,0 +1,142 @@
+############## ITER 0##############
+Number of Visited BACs      : 	1
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	153
+############## ITER 0##############
+Number of Visited BACs      : 	1
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	46
+############## ITER 1##############
+Number of Visited BACs      : 	4
+Number of non-dominated BACs: 	6
+Number of BACs to be visited: 	6
+Elapsed Time: 	168
+############## ITER 2##############
+Number of Visited BACs      : 	10
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	5
+Elapsed Time: 	439
+############## ITER 3##############
+Number of Visited BACs      : 	15
+Number of non-dominated BACs: 	4
+Number of BACs to be visited: 	4
+Elapsed Time: 	677
+############## ITER 4##############
+Number of Visited BACs      : 	19
+Number of non-dominated BACs: 	2
+Number of BACs to be visited: 	2
+Elapsed Time: 	841
+############## ITER 5##############
+Number of Visited BACs      : 	21
+Number of non-dominated BACs: 	6
+Number of BACs to be visited: 	6
+Elapsed Time: 	927
+############## ITER 6##############
+Number of Visited BACs      : 	27
+Number of non-dominated BACs: 	12
+Number of BACs to be visited: 	12
+Elapsed Time: 	1182
+############## ITER 7##############
+Number of Visited BACs      : 	39
+Number of non-dominated BACs: 	14
+Number of BACs to be visited: 	14
+Elapsed Time: 	1655
+############## ITER 8##############
+Number of Visited BACs      : 	53
+Number of non-dominated BACs: 	10
+Number of BACs to be visited: 	10
+Elapsed Time: 	2207
+############## ITER 9##############
+Number of Visited BACs      : 	63
+Number of non-dominated BACs: 	14
+Number of BACs to be visited: 	13
+Elapsed Time: 	2608
+############## ITER 10##############
+Number of Visited BACs      : 	76
+Number of non-dominated BACs: 	20
+Number of BACs to be visited: 	17
+Elapsed Time: 	3172
+############## ITER 11##############
+Number of Visited BACs      : 	93
+Number of non-dominated BACs: 	17
+Number of BACs to be visited: 	17
+Elapsed Time: 	3946
+############## ITER 12##############
+Number of Visited BACs      : 	110
+Number of non-dominated BACs: 	20
+Number of BACs to be visited: 	19
+Elapsed Time: 	4734
+############## ITER 13##############
+Number of Visited BACs      : 	129
+Number of non-dominated BACs: 	17
+Number of BACs to be visited: 	16
+Elapsed Time: 	5610
+############## ITER 14##############
+Number of Visited BACs      : 	145
+Number of non-dominated BACs: 	15
+Number of BACs to be visited: 	14
+Elapsed Time: 	6350
+############## ITER 15##############
+Number of Visited BACs      : 	159
+Number of non-dominated BACs: 	13
+Number of BACs to be visited: 	11
+Elapsed Time: 	7000
+############## ITER 16##############
+Number of Visited BACs      : 	170
+Number of non-dominated BACs: 	11
+Number of BACs to be visited: 	11
+Elapsed Time: 	7513
+############## ITER 17##############
+Number of Visited BACs      : 	181
+Number of non-dominated BACs: 	14
+Number of BACs to be visited: 	11
+Elapsed Time: 	8020
+############## ITER 18##############
+Number of Visited BACs      : 	192
+Number of non-dominated BACs: 	10
+Number of BACs to be visited: 	7
+Elapsed Time: 	8633
+############## ITER 19##############
+Number of Visited BACs      : 	199
+Number of non-dominated BACs: 	12
+Number of BACs to be visited: 	6
+Elapsed Time: 	9045
+############## ITER 20##############
+Number of Visited BACs      : 	205
+Number of non-dominated BACs: 	10
+Number of BACs to be visited: 	5
+Elapsed Time: 	9390
+############## ITER 21##############
+Number of Visited BACs      : 	210
+Number of non-dominated BACs: 	10
+Number of BACs to be visited: 	1
+Elapsed Time: 	9650
+############## ITER 22##############
+Number of Visited BACs      : 	211
+Number of non-dominated BACs: 	10
+Number of BACs to be visited: 	1
+Elapsed Time: 	9701
+############## ITER 23##############
+Number of Visited BACs      : 	212
+Number of non-dominated BACs: 	10
+Number of BACs to be visited: 	0
+Elapsed Time: 	9754
+############## SUMMARY ITARATION 0##############
+Total Obj. Func. Eval.      :	2121
+Total Time (secs)           :	9754
+Number of Visited BACs      : 	212
+Number of non-dominated BACs: 	10
+Total Func. Eval. from first iteration: 2121
+Total Time elapsed from first iteration (secs)           :	9858
+30	100	150	240	300	0	0	0	76.0	57.0418	41.0875	0.607366204110593
+35	100	150	240	300	0	0	0	76.0	57.027	41.0899	0.606562631063753
+30	95	150	240	300	0	0	0	76.0	56.9953	41.1044	0.6049487577137237
+35	100	150	245	300	0	0	0	76.0	56.9652	41.1076	0.6033018585406554
+35	95	150	245	300	0	0	0	76.0	56.9255	41.1137	0.6011559160963703
+100	215	255	300	330	0	0	0	76.0	56.8541	41.2046	0.5982090012684448
+35	95	150	250	300	0	0	0	76.0	56.8779	41.1491	0.598905378392023
+40	95	150	245	300	0	0	0	76.0	56.9248	41.144	0.6014561442594086
+100	220	255	300	330	0	0	0	76.0	56.8549	41.1896	0.5980844297321675
+95	220	255	300	330	0	0	0	76.0	56.8659	41.1751	0.59853133385235

@@ -1,0 +1,80 @@
+############## ITER 1##############
+Total Obj. Func. Eval.      :	30
+Total Time (secs)           :	154
+Total Objective Function Evaluations (Cummulative):	1386
+Total Time (cummulative):	1248559
+############## ITER 1##############
+Total Obj. Func. Eval.      :	52
+Total Time (secs)           :	140
+Total Objective Function Evaluations (Cummulative):	1438
+Total Time (cummulative):	1389485
+############## ITER 1##############
+Total Obj. Func. Eval.      :	74
+Total Time (secs)           :	142
+Total Objective Function Evaluations (Cummulative):	1512
+Total Time (cummulative):	1532035
+############## ITER 1##############
+Total Obj. Func. Eval.      :	95
+Total Time (secs)           :	141
+Total Objective Function Evaluations (Cummulative):	1607
+Total Time (cummulative):	1673121
+############## ITER 1##############
+Total Obj. Func. Eval.      :	116
+Total Time (secs)           :	133
+Total Objective Function Evaluations (Cummulative):	1723
+Total Time (cummulative):	1806475
+############## ITER 1##############
+Total Obj. Func. Eval.      :	136
+Total Time (secs)           :	97
+Total Objective Function Evaluations (Cummulative):	1859
+Total Time (cummulative):	1904391
+############## ITER 1##############
+Total Obj. Func. Eval.      :	156
+Total Time (secs)           :	98
+Total Objective Function Evaluations (Cummulative):	2015
+Total Time (cummulative):	2003162
+############## ITER 1##############
+Total Obj. Func. Eval.      :	175
+Total Time (secs)           :	92
+Total Objective Function Evaluations (Cummulative):	2190
+Total Time (cummulative):	2095868
+############## ITER 1##############
+Total Obj. Func. Eval.      :	195
+Total Time (secs)           :	100
+Total Objective Function Evaluations (Cummulative):	2385
+Total Time (cummulative):	2196235
+############## ITER 1##############
+Total Obj. Func. Eval.      :	215
+Total Time (secs)           :	102
+Total Objective Function Evaluations (Cummulative):	2600
+Total Time (cummulative):	2298349
+############## ITER 1##############
+Total Obj. Func. Eval.      :	215
+Total Time (secs)           :	0
+Total Objective Function Evaluations (Cummulative):	2815
+Total Time (cummulative):	2298448
+############## ITER 1##############
+Total Obj. Func. Eval.      :	234
+Total Time (secs)           :	97
+Total Objective Function Evaluations (Cummulative):	3049
+Total Time (cummulative):	2396447
+############## ITER 1##############
+Total Obj. Func. Eval.      :	234
+Total Time (secs)           :	0
+Total Objective Function Evaluations (Cummulative):	3283
+Total Time (cummulative):	2396534
+############## ITER 1##############
+Total Obj. Func. Eval.      :	253
+Total Time (secs)           :	94
+Total Objective Function Evaluations (Cummulative):	3536
+Total Time (cummulative):	2491353
+############## ITER 1##############
+Total Obj. Func. Eval.      :	272
+Total Time (secs)           :	96
+Total Objective Function Evaluations (Cummulative):	3808
+Total Time (cummulative):	2587472
+############## ITER 1##############
+Total Obj. Func. Eval.      :	272
+Total Time (secs)           :	1493
+Total Objective Function Evaluations (Cummulative):	4080
+Total Time (cummulative):	2587472

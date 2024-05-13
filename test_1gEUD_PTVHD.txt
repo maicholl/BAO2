@@ -1,0 +1,9 @@
+(1/R_PTVHD*(sum{i in voxelIndex_PTVHD} (sum{j in bmltsIndex_PTVHD_150: (i,j)
+   in voxelbmlt_PTVHD_150} x150[j]*intensities_PTVHD_150[i,j] + sum{j in 
+  bmltsIndex_PTVHD_225: (i,j) in voxelbmlt_PTVHD_225} x225[j]*
+  intensities_PTVHD_225[i,j] + sum{j in bmltsIndex_PTVHD_255: (i,j) in 
+  voxelbmlt_PTVHD_255} x255[j]*intensities_PTVHD_255[i,j] + sum{j in 
+  bmltsIndex_PTVHD_275: (i,j) in voxelbmlt_PTVHD_275} x275[j]*
+  intensities_PTVHD_275[i,j] + sum{j in bmltsIndex_PTVHD_295: (i,j) in 
+  voxelbmlt_PTVHD_295} x295[j]*intensities_PTVHD_295[i,j])^a[1]))^(1/a[1]) = 76
+

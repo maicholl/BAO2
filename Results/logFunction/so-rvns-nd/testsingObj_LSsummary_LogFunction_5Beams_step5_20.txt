@@ -1,0 +1,5 @@
+############## ITER 20##############
+Total Obj. Func. Eval.      :	80
+Total Time (secs)           :	1505
+Total Objective Function Evaluations (Cummulative):	1870
+Total Time (cummulative):	38542913

@@ -1,0 +1,10 @@
+(1/R_RECTUM*(sum{i in voxelIndex_RECTUM} (sum{j in bmltsIndex_RECTUM_45: (i,j)
+   in voxelbmlt_RECTUM_45} x45[j]*intensities_RECTUM_45[i,j] + sum{j in 
+  bmltsIndex_RECTUM_145: (i,j) in voxelbmlt_RECTUM_145} x145[j]*
+  intensities_RECTUM_145[i,j] + sum{j in bmltsIndex_RECTUM_210: (i,j) in 
+  voxelbmlt_RECTUM_210} x210[j]*intensities_RECTUM_210[i,j] + sum{j in 
+  bmltsIndex_RECTUM_220: (i,j) in voxelbmlt_RECTUM_220} x220[j]*
+  intensities_RECTUM_220[i,j] + sum{j in bmltsIndex_RECTUM_325: (i,j) in 
+  voxelbmlt_RECTUM_325} x325[j]*intensities_RECTUM_325[i,j])^a[2]))^(1/a[2]) =
+58.5014
+

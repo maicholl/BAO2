@@ -1,0 +1,57 @@
+############## ITER 0##############
+Number of Visited BACs      : 	1
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	1
+Elapsed Time: 	106
+############## ITER 1##############
+Number of Visited BACs      : 	2
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	1
+Elapsed Time: 	216
+############## ITER 2##############
+Number of Visited BACs      : 	3
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	1
+Elapsed Time: 	336
+############## ITER 3##############
+Number of Visited BACs      : 	4
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	3
+Elapsed Time: 	447
+############## ITER 4##############
+Number of Visited BACs      : 	7
+Number of non-dominated BACs: 	1
+Number of BACs to be visited: 	1
+Elapsed Time: 	786
+############## ITER 5##############
+Number of Visited BACs      : 	8
+Number of non-dominated BACs: 	2
+Number of BACs to be visited: 	2
+Elapsed Time: 	889
+############## ITER 6##############
+Number of Visited BACs      : 	10
+Number of non-dominated BACs: 	3
+Number of BACs to be visited: 	2
+Elapsed Time: 	1122
+############## ITER 7##############
+Number of Visited BACs      : 	12
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	2
+Elapsed Time: 	1325
+############## ITER 8##############
+Number of Visited BACs      : 	14
+Number of non-dominated BACs: 	5
+Number of BACs to be visited: 	0
+Elapsed Time: 	1537
+############## SUMMARY ITARATION 9##############
+Total Obj. Func. Eval.      :	141
+Total Time (secs)           :	1537
+Number of Visited BACs      : 	14
+Number of non-dominated BACs: 	5
+Total Func. Eval. from first iteration: 2370
+Total Time elapsed from first iteration (secs)           :	22333
+70	120	150	220	275	0	0	0	76.0	56.8093	40.9085	0.5924351679994377
+75	120	150	220	275	0	0	0	76.0	56.7962	40.9327	0.5919776613004504
+70	120	150	220	280	0	0	0	76.0	56.8815	40.8841	0.5961670841485758
+75	120	145	220	275	0	0	0	76.0	56.8086	40.9245	0.592572352652352
+75	120	150	220	280	0	0	0	76.0	56.8379	40.9029	0.5939556785114506

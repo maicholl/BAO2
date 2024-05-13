@@ -1,0 +1,10 @@
+(1/R_BLADDER*(sum{i in voxelIndex_BLADDER} (sum{j in bmltsIndex_BLADDER_155: (
+  i,j) in voxelbmlt_BLADDER_155} x155[j]*intensities_BLADDER_155[i,j] + sum
+  {j in bmltsIndex_BLADDER_220: (i,j) in voxelbmlt_BLADDER_220} x220[j]*
+  intensities_BLADDER_220[i,j] + sum{j in bmltsIndex_BLADDER_255: (i,j) in 
+  voxelbmlt_BLADDER_255} x255[j]*intensities_BLADDER_255[i,j] + sum{j in 
+  bmltsIndex_BLADDER_275: (i,j) in voxelbmlt_BLADDER_275} x275[j]*
+  intensities_BLADDER_275[i,j] + sum{j in bmltsIndex_BLADDER_295: (i,j) in 
+  voxelbmlt_BLADDER_295} x295[j]*intensities_BLADDER_295[i,j])^a[3]))^(1/a[3]) =
+40.9918
+
