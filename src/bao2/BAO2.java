@@ -12,6 +12,7 @@ import imrt2.TreatmentPlan;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -27,22 +28,31 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
 
 /**
  *
  * @author Maicholl
  */
 public class BAO2 { 
-    List<Integer> targetList = null;
     public AMPL ampl;
     public int numOrgans;
     public int numAngles;
@@ -110,10 +120,15 @@ public class BAO2 {
     public int iterationsCounter;
     
     public boolean rMIP_type; // rMIP Boolean MAICHOLL
+    public int rMIP_number_allow; // rMIP Int MAICHOLL
     
     public boolean warm_start; // warm-start Boolean MAICHOLL NZ
     
     public boolean geom_rest; // warm-start Boolean MAICHOLL NZ
+    
+    public HashMap <Integer, Double> mip_relaxed = null;
+    public List<Integer> targetList = null;
+    public double totalmip = 0;
     
     public BAO2(){
         localTimer = System.currentTimeMillis();
@@ -238,7 +253,15 @@ public class BAO2 {
             }
             line=fileIn.readLine();
         }
-        
+        while(line != null){
+            if (!line.contains("%")){
+                String[] auxReader = line.split(sp);
+                rMIP_number_allow=Integer.parseInt(auxReader[0]);
+                line=fileIn.readLine();
+                break;
+            }
+            line=fileIn.readLine();
+        }
         //get WARM START o not WARM START
         while(line != null){
             if (!line.contains("%")){
@@ -1057,10 +1080,10 @@ public class BAO2 {
     //Neighbourhood definitions
     public int[][] ChooseNeigbours(int option,TreatmentPlan sol, int ns) throws IOException{ //Maicholl Agregado para VNS
         int[][] auxAngles= new int[ns][numAngles];
-        HashMap <Integer, Double> mip_relaxed = null;
-        List<Integer> targetList = null;
-        double totalmip = 0;
-        if(rMIP_type){
+        //HashMap <Integer, Double> mip_relaxed = null;
+        //List<Integer> targetList = null;
+        //double totalmip = 0;
+        /*if(rMIP_type){
         //  BLoque preparación rMIP 
             mip_relaxed =  readRelaxedMiP("./mip_relaxed.txt");            
             LinkedHashMap<Integer,Double> orderer_angles = order_my_hashmap(mip_relaxed);
@@ -1077,7 +1100,7 @@ public class BAO2 {
             for(int i=0; i< targetList.size();i++){
                 targetList.set(i, targetList.get(i)*5);
             }
-        }
+        }*/
         switch (option){
             case 0:
                 auxAngles = getNeigboursRVNS(sol, ns);//Parte caso 1, parte caso 2
@@ -1395,53 +1418,53 @@ public class BAO2 {
     
     // Parallel runs
     public class getNeighbour implements Callable<TreatmentPlan> {
-    private int[] auxAngles;
-    private TreatmentPlan sol;
-    private final String cFile;
-    private final String processName;
-    private Organs[] org;
-  
-    public getNeighbour(int[] auxAng, TreatmentPlan currentSol, String cF, String neighbourNum){
-        Thread.currentThread().setName(neighbourNum);
-        this.processName = jobID + "_" + Thread.currentThread().getName();
-        System.out.println("Generating Neighbour Num: " + processName);
-        auxAngles = new int[auxAng.length];
-        System.arraycopy(auxAng, 0, auxAngles, 0, auxAngles.length);
-        sol = new TreatmentPlan(currentSol);
-        cFile = cF;
-    }
-    
-    @Override
-    public TreatmentPlan call() throws Exception {
-        int angle;    
-        TreatmentPlan neighbour = new TreatmentPlan(sol);
-                
-        for (int j = 0; j<auxAngles.length;j++){
-            neighbour.selAngles[j] = auxAngles[j];
+        private int[] auxAngles;
+        private TreatmentPlan sol;
+        private final String cFile;
+        private final String processName;
+        private Organs[] org;
+
+        public getNeighbour(int[] auxAng, TreatmentPlan currentSol, String cF, String neighbourNum){
+            Thread.currentThread().setName(neighbourNum);
+            this.processName = jobID + "_" + Thread.currentThread().getName();
+            System.out.println("Generating Neighbour Num: " + processName);
+            auxAngles = new int[auxAng.length];
+            System.arraycopy(auxAng, 0, auxAngles, 0, auxAngles.length);
+            sol = new TreatmentPlan(currentSol);
+            cFile = cF;
         }
-        synchronized(neighbour){
-            neighbour.generateDDM(pathFile);
-            for(int ind: neighbour.getOrganos().keySet()){
-                    Organs organos = neighbour.getOrganos().get(ind);
-                    organos.writeMapVoxel(this.processName,neighbour.selAngles);
-                }
-            //generateDDM(neighbour, this.processName);
+
+        @Override
+        public TreatmentPlan call() throws Exception {
+            int angle;    
+            TreatmentPlan neighbour = new TreatmentPlan(sol);
+
+            for (int j = 0; j<auxAngles.length;j++){
+                neighbour.selAngles[j] = auxAngles[j];
+            }
+            synchronized(neighbour){
+                neighbour.generateDDM(pathFile);
+                for(int ind: neighbour.getOrganos().keySet()){
+                        Organs organos = neighbour.getOrganos().get(ind);
+                        organos.writeMapVoxel(this.processName,neighbour.selAngles);
+                    }
+                //generateDDM(neighbour, this.processName);
+            }
+
+            neighbour.generateReferencePoint(sol.getOrganos(), 0, solver, maxX, 1, this.processName);
+
+            //neighbour.getVxDx(this.processName, this.org, Vx, Dx);
+            //synchronized(visitedBACs){
+                //addNewVisitedBAC(neighbour); //Add Angles and Reference Point
+            //    generatedBACs.add(neighbour);
+            //}
+            totalObjFuncEval++;
+
+            neighbour.printSol(cFile);        
+
+            return neighbour;
         }
-       
-        neighbour.generateReferencePoint(sol.getOrganos(), 0, solver, maxX, 1, this.processName);
-        
-        //neighbour.getVxDx(this.processName, this.org, Vx, Dx);
-        //synchronized(visitedBACs){
-            //addNewVisitedBAC(neighbour); //Add Angles and Reference Point
-        //    generatedBACs.add(neighbour);
-        //}
-        totalObjFuncEval++;
-        
-        neighbour.printSol(cFile);        
-         
-        return neighbour;
     }
-}
     
     public int [] shake(int [] toshake){
         Random r = new Random(); 
@@ -1624,7 +1647,6 @@ public class BAO2 {
     }
     // Run 
     public void run() throws IOException, InterruptedException, ExecutionException{
-        
         long prevTimer = System.currentTimeMillis();
         /*************************************************************  
         * Create CheckFile. Allows us to shut down the algorithm     *
@@ -1655,7 +1677,7 @@ public class BAO2 {
             totalObjFuncEval=0;
             initialPlan.setAngles(initialBACs[globalIter]);
             initialPlan.beams = numAngles;
-            initialPlan.loadNumBixels(beamInfoDir);
+            initialPlan.loadNumBixels(beamInfoDir,step);
             initialPlan.cargarBeams(pathFile);
             initialPlan.printSolTime(timerFile,0,localTimer,"DDMs loading begins",false);
             prevTimer = System.currentTimeMillis();
@@ -1691,7 +1713,10 @@ public class BAO2 {
                     localSol= ite_fixed_rMIP_restr_LS(initialPlan);
                 }else if(selectionCriterion == 5){
                     localSol= vnd(initialPlan);
+                }else if(selectionCriterion == 99){
+                    localSol = paramTest(initialPlan);
                 }
+                
             }else if(problemType.compareTo("MO") == 0){
                 if(selectionCriterion <= 5 ){
                     if(moestrategy.equalsIgnoreCase("Angel")){
@@ -1729,7 +1754,26 @@ public class BAO2 {
         int iterationsLimit;
         boolean endCriterion = false;
         iterationsLimit = iterations;  
-       
+        if(rMIP_type){
+        //  BLoque preparación rMIP 
+            mip_relaxed =  readRelaxedMiP("./mip_relaxed.txt");            
+            LinkedHashMap<Integer,Double> orderer_angles = order_my_hashmap(mip_relaxed);
+            for(Integer idmip : mip_relaxed.keySet()){
+                totalmip += mip_relaxed.get(idmip);
+            }
+            Set<Integer> bads_angles = orderer_angles.keySet();
+            targetList = new ArrayList<>(bads_angles);
+            int size_target = targetList.size();
+            Collections.reverse(targetList);
+            if(tipomov == 1){
+                for(int i=size_target-1; i>=rMIP_number_allow;i--){
+                    targetList.remove(i);
+                }
+            }
+            for(int i=0; i< targetList.size();i++){
+                targetList.set(i, targetList.get(i)*5);
+            }
+        }
         currentSol = new TreatmentPlan(ini);
         while (!endCriterion){
             TreatmentPlan[] neighbourhood;
@@ -1748,7 +1792,6 @@ public class BAO2 {
                 prevTimer = System.currentTimeMillis();
                 for(TreatmentPlan ns:neighbourhood){
                     currentSol.copyAngle(ns, ns.selAngles);
-
                 }
                 printCurrent(currentSol);
                 try {
@@ -1757,7 +1800,6 @@ public class BAO2 {
                     ex.printStackTrace();
                 }         
             }else{
-                
                 endCriterion=true;   
                 currentSol.printSolTime(timerFile,0,localTimer,"generateNeighbourhood ended, algorithm ended",true);
             }
@@ -2710,7 +2752,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
                 targetList = new ArrayList<>(bads_angles);
                 int size_target = targetList.size();
                 Collections.reverse(targetList);
-                for(int i=size_target-1; i>(size_target*(35.0/100.0))-1;i--){
+                for(int i=size_target-1; i>=rMIP_number_allow;i--){
                     targetList.remove(i);
                 }
                 for(int i=0; i< targetList.size();i++){
@@ -2746,7 +2788,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
                 Collections.shuffle(angletochange, new Random());
 
                 for(int z=0;z<numAngles;z++){
-                    int selected_z = angletochange.removeFirst();
+                    int selected_z = angletochange.remove(0);
                     int ind_sel = -1;
                     if(strategy.compareToIgnoreCase("ND")==0){
                         for(int i = 0; i < iterSol.selAngles.length; i++){
@@ -2967,7 +3009,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
                 aux_sol.generateReferencePoint(aux_sol.getOrganos(), 0, solver, maxX, 1, jobID);
                 aux_sol.printSol( cFile);
                 aux_sol.liberateMemory();
-                generatedBACs.addLast(new TreatmentPlan(aux_sol)); 
+                generatedBACs.add(new TreatmentPlan(aux_sol)); 
             }
             currentSol.printSolTime(timerFile,0,prevTimer,"generateNeighbourhood_rMIP_fixed: Solved FMO of fixed beam angle with best of beam vector...",false);
             prevTimer = System.currentTimeMillis();
@@ -3011,8 +3053,6 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
             prevBAC[h]=0;
         }
         
-           
-        
         while (!endCriterion){
             System.arraycopy(currentSol.selAngles, 0, prevBAC, 0, numAngles);
             ArrayList<Integer> angletochange = new ArrayList<>();
@@ -3024,7 +3064,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
             
             
             for(int z=0;z<numAngles;z++){
-                int selected_z = angletochange.removeFirst();
+                int selected_z = angletochange.remove(0);
                 int ind_sel = -1;
                 if(strategy.compareToIgnoreCase("ND")==0){
                     for(int i = 0; i < iterSol.selAngles.length; i++){
@@ -3110,7 +3150,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
             targetList = new ArrayList<>(bads_angles);
             int size_target = targetList.size();
             Collections.reverse(targetList);
-            for(int i=size_target-1; i>size_target*(35.0/100.0);i--){
+            for(int i=size_target-1; i>=rMIP_number_allow;i--){
                 targetList.remove(i);
             }
             for(int i=0; i< targetList.size();i++){
@@ -3204,8 +3244,8 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
             for(int i=0;i<auxAngles.length;i++){
                 for(int j=0;j<generatedBACs.size();j++){
                     if(Arrays.equals(auxAngles[i], generatedBACs.get(j).selAngles)){
-                        repited_auxAngles.addLast(i);
-                        repited_bac_explored.addLast(j);
+                        repited_auxAngles.add(i);
+                        repited_bac_explored.add(j);
                         break;
                     }
                 }
@@ -3236,7 +3276,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
                 for (int i = 0; i<ft.length;i++){
                     if(!repited_auxAngles.contains(i)){
                         nhood[i] = new TreatmentPlan(ft[i].get()); 
-                        generatedBACs.addLast(new TreatmentPlan(nhood[i]));  
+                        generatedBACs.add(new TreatmentPlan(nhood[i]));  
                     }
                 }
                 for(int i = 0;i<repited_auxAngles.size();i++){
@@ -3288,7 +3328,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
 
                     nhood[i].printSol( cFile);
                     nhood[i].liberateMemory();
-                    generatedBACs.addLast(new TreatmentPlan(nhood[i]));  
+                    generatedBACs.add(new TreatmentPlan(nhood[i]));  
                     //bac_explored.add(new TreatmentPlan(nhood[i]));
                 }else{
                     System.out.println("Ya resuelto" );
@@ -3338,9 +3378,9 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
             angle=(int)auxAngles[neighbour][j];
             
             if(angulos_sels.size()>=1)
-                auxAngles[neighbour][indexBAC] = angulos_sels.removeFirst();
+                auxAngles[neighbour][indexBAC] = angulos_sels.remove(0);
             if(angulos_sels.size()>=1)
-                auxAngles[neighbour+1][indexBAC] = angulos_sels.removeFirst();
+                auxAngles[neighbour+1][indexBAC] = angulos_sels.remove(0);
             
             
             neighbour = neighbour+2;
@@ -3386,7 +3426,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
                 Collections.shuffle(angletochange, new Random());
 
                 for(int z=0;z<numAngles;z++){
-                    int selected_z = angletochange.removeFirst();
+                    int selected_z = angletochange.remove(0);
                     int ind_sel = -1;
                     if(strategy.compareToIgnoreCase("ND")==0){
                         for(int i = 0; i < iterSol.selAngles.length; i++){
@@ -3526,7 +3566,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
                 }
                 aux_bac[fixed.length] = ((int) sol.beams_vector[i+4][0])*5;
                 bubbleSort(aux_bac);
-                to_solve.addLast(aux_bac);
+                to_solve.add(aux_bac);
             }
             aux_sol = new TreatmentPlan(sol);
             while(to_solve.size()>0){
@@ -3590,8 +3630,8 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
             for(int i=0;i<auxAngles.length;i++){
                 for(int j=0;j<generatedBACs.size();j++){
                     if(Arrays.equals(auxAngles[i], generatedBACs.get(j).selAngles)){
-                        repited_auxAngles.addLast(i);
-                        repited_bac_explored.addLast(j);
+                        repited_auxAngles.add(i);
+                        repited_bac_explored.add(j);
                         break;
                     }
                 }
@@ -3622,7 +3662,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
                 for (int i = 0; i<ft.length;i++){
                     if(!repited_auxAngles.contains(i)){
                         nhood[i] = new TreatmentPlan(ft[i].get()); 
-                        generatedBACs.addLast(new TreatmentPlan(nhood[i]));  
+                        generatedBACs.add(new TreatmentPlan(nhood[i]));  
                     }
                 }
                 for(int i = 0;i<repited_auxAngles.size();i++){
@@ -3674,7 +3714,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
 
                     nhood[i].printSol( cFile);
                     nhood[i].liberateMemory();
-                    generatedBACs.addLast(new TreatmentPlan(nhood[i]));  
+                    generatedBACs.add(new TreatmentPlan(nhood[i]));  
                     //bac_explored.add(new TreatmentPlan(nhood[i]));
                 }else{
                     System.out.println("Ya resuelto" );
@@ -3740,7 +3780,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
                 targetList = new ArrayList<>(bads_angles);
                 int size_target = targetList.size();
                 Collections.reverse(targetList);
-                for(int i=size_target-1; i>(size_target*(35.0/100.0))-1;i--){
+                for(int i=size_target-1; i>=rMIP_number_allow;i--){
                     targetList.remove(i);
                 }
                 for(int i=0; i< targetList.size();i++){
@@ -3776,7 +3816,7 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
                 Collections.shuffle(angletochange, new Random());
 
                 for(int z=0;z<numAngles;z++){
-                    int selected_z = angletochange.removeFirst();
+                    int selected_z = angletochange.remove(0);
                     int ind_sel = -1;
                     if(strategy.compareToIgnoreCase("ND")==0){
                         for(int i = 0; i < iterSol.selAngles.length; i++){
@@ -3859,4 +3899,307 @@ public TreatmentPlan MO_rVNS(TreatmentPlan ini, int tipomov) throws InterruptedE
         return currentSol;
     }
     
+    public TreatmentPlan paramTest(TreatmentPlan ini) throws InterruptedException, ExecutionException, IOException {
+        int[] eud_ptv = {77};
+        int[] a_1 = {-100};
+        int[] a_2 = {8,20};
+        int[] a_3 = {2,8,20};
+        int[] a_4 = {2,8,20};
+        long prevTimer = System.currentTimeMillis();
+        initialPlan.printSolTime(timerFile,0,prevTimer,"localSearch begins",false);
+        prevTimer = System.currentTimeMillis();
+        TreatmentPlan currentSol;
+        TreatmentPlan bestNeighbour;
+        Random r = new Random();
+        long localTimer = System.currentTimeMillis();
+        File checkFile = new File("./checkFiles/"+jobID+"checkFile.txt");
+        int iterationsLimit;
+        boolean endCriterion = false;
+        iterationsLimit = iterations;  
+        currentSol = new TreatmentPlan(ini);
+        
+            TreatmentPlan[] neighbourhood;
+            
+            initialPlan.printSolTime(timerFile,0,prevTimer,"generateNeighbourhood begins",false);
+            prevTimer = System.currentTimeMillis();
+            // generate the neighbourhood
+            currentSol = generatealloptions(currentSol, neighbourhoodSize, beamletSet, currentFile,iterationsCounter, eud_ptv,a_1,a_2,a_3,a_4);
+            
+            // gets the best neighbour
+           // bestNeighbour = new TreatmentPlan(getBestNeighbour(iterationsCounter,neighbourhood,neighbourhoodSize));
+            
+            
+            bestNeighbour = null;
+            
+            iterationsCounter++;
+        
+        printSolution(localTimer, currentSol);
+        
+        return currentSol;
+    }
+    
+    public TreatmentPlan generatealloptions( TreatmentPlan sol, 
+        int ns, int[][] bs, String cFile, int iteration, int[] eud_ptv, int[] a_1, int[] a_2, int[] a_3, int[] a_4) throws IOException, InterruptedException, ExecutionException{
+        long prevTimer = System.currentTimeMillis();
+        int angle;
+        int[][] auxAngles = new int[ns][numAngles];
+            TreatmentPlan[] nhood = new TreatmentPlan [ns];
+        System.out.println("====================================" );
+        System.out.println("GENERATING NEIGHBOURHOOD FOR BAC: " );
+        System.out.println("====================================" );
+        for (int j = 0; j<numAngles;j++){
+            System.out.print(sol.selAngles[j] + " - " );
+        }
+        System.out.println();
+        /**********Calculate BAC to be Visited**********
+        * We generate (2 * #beams) neighbours of our   *
+        * current solution. Each beam angle is modified*
+        * in +/- "step" degrees.                       *
+        ***********************************************/
+       
+        //auxAngles=ChooseNeigbours(tipomov,sol,ns); 
+        if (parallelNeighbourhoodGeneration){        
+                                
+            //getNeighbour[] gNeighbour = new getNeighbour[ns]; //Callables
+            Future<TreatmentPlan> ft; //Callables
+            ExecutorService pool = new ThreadPoolExecutor(10,10,0L,TimeUnit.MILLISECONDS,new ArrayBlockingQueue<>(10),new ThreadPoolExecutor.CallerRunsPolicy());
+            //create Callables and FutureTasks
+            //CountDownLatch latch = new CountDownLatch(ns);
+            int h = 0;
+            for(int i=0;i<eud_ptv.length;i++){
+                int ptv = eud_ptv[i];
+                for(int j=0;j<a_1.length;j++){
+                    int a1 = a_1[j];
+                    for(int k=0;k<a_2.length;k++){
+                        int a2 = a_2[k];
+                        for(int l=0;l<a_3.length;l++){
+                            int a3 = a_3[l];
+                            for(int m=0;m<a_4.length;m++){
+                                int a4 = a_4[m];
+                                System.out.println("====================================" );
+                                System.out.println("GENERATING NEIGHBOURHOOD FOR BAC: " );
+                                System.out.println("====================================" );
+
+                                System.out.println("eud_ptv = "+ptv+" , a1 = "+a1+" , a2 = "+a2+"  , a3 = "+a3+" , a4 = "+a4);
+                                int[] params = {ptv,a1,a2,a3,a4};
+                                sol.printSolTime(timerFile,0,prevTimer,"solving FMO with... eud_ptv = "+ptv+" , a1 = "+a1+" , a2 = "+a2+"  , a3 = "+a3+" , a4 = "+a4,false);
+                                prevTimer = System.currentTimeMillis();
+                                
+                                Callable<TreatmentPlan> parallelNeighbour = new BAO2.parallelNeighbour(sol.selAngles, sol, cFile, Integer.toString(h+1),params);
+                                ft = new FutureTask<>(parallelNeighbour);
+                                ft = pool.submit(parallelNeighbour);
+                    
+                                h++;
+                            }
+                        }
+                    }
+                }
+            }    
+             
+            pool.shutdown();
+        }else{
+            for(int i=0;i<eud_ptv.length;i++){
+                int ptv = eud_ptv[i];
+                for(int j=0;j<a_1.length;j++){
+                    int a1 = a_1[j];
+                    for(int k=0;k<a_2.length;k++){
+                        int a2 = a_2[k];
+                        for(int l=0;l<a_3.length;l++){
+                            int a3 = a_3[l];
+                            for(int m=0;m<a_4.length;m++){
+                                int a4 = a_4[m];
+                                System.out.println("====================================" );
+                                System.out.println("GENERATING NEIGHBOURHOOD FOR BAC: " );
+                                System.out.println("====================================" );
+
+                                System.out.println("eud_ptv = "+ptv+" , a1 = "+a1+" , a2 = "+a2+"  , a3 = "+a3+" , a4 = "+a4);
+                                int[] params = {ptv,a1,a2,a3,a4};
+                                sol.printSolTime(timerFile,0,prevTimer,"solving FMO with... eud_ptv = "+ptv+" , a1 = "+a1+" , a2 = "+a2+"  , a3 = "+a3+" , a4 = "+a4,false);
+                                prevTimer = System.currentTimeMillis();
+                                TreatmentPlan aux = new TreatmentPlan(sol);
+                                aux.generateDDM(pathFile);
+                                for(int ind: aux.getOrganos().keySet()){
+                                    Organs organos = aux.getOrganos().get(ind);
+                                    organos.writeMapVoxel(jobID,aux.selAngles);
+                                }
+                                aux.generateReferencePoint_ajust(sol.getOrganos(), 0, solver, maxX, 1, jobID, params);
+
+
+                                totalObjFuncEval++;
+
+                                aux.printSol( cFile);
+                                aux.liberateMemory();
+                                Organs[] organos = new Organs[aux.getOrganos().size()];
+                                int cont = 0;
+                                for(int ind: aux.getOrganos().keySet()){
+                                    organos[cont] = aux.getOrganos().get(ind);
+                                    cont++;
+                                }
+                                createDVH_CSV(organos,jobID,params); //Maicholl archivo
+                                sol.printSolTime(timerFile,0,prevTimer,"ended FMO with... eud_ptv = "+ptv+" , a1 = "+a1+" , a2 = "+a2+"  , a3 = "+a3+" , a4 = "+a4,false);
+                                prevTimer = System.currentTimeMillis();
+
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //sol.printSolTime(timerFile,0,prevTimer,"ended 10 Neighbourhood of generateNeighbourhood...",true);
+        prevTimer = System.currentTimeMillis();
+        System.out.println("*****************************************" );
+        System.out.println("*    NEIGHBOURHOOD HAS BEEN GENERATED   *" );
+        System.out.println("*****************************************" );
+        return sol;
+    }
+    
+    public String createDVH_CSV(Organs[] o, String jobID, int[] params)
+            throws IOException{//katty
+        String dir;
+        //String input="./Pruebas/inputFile_"+jobThreadID+".txt";
+        
+        int n=0;
+        
+        String csvFile="./DVHs/"+jobID+"_DVH_ptvub_"+params[0]+"_a1_"+params[1]+"_a2_"+params[2]+"_a3_"+params[3]+"_a4_"+params[4]+".csv";
+        File file = new File(csvFile);
+        if (file.createNewFile()){
+            writeToFile(csvFile,
+                        "Type,Dose,Volume\n");
+            for (int j = 0; j< o.length; j++) {
+
+                ArrayList<Double> dose = new ArrayList<Double>();
+                dir = jobID + "DVH_" + o[j].getName() + ".txt";
+                dose=readFileDVH(dir);
+    //            System.out.println(dose);
+                float sizeAux = dose.size();
+                float porcentaje = 0;
+                for(int i=0;i<dose.size();i++){
+                    porcentaje=((sizeAux-i)/sizeAux)*100;
+                    writeToFile(csvFile,
+                            o[j].getName()+","+dose.get(i)+","+porcentaje+"\n");
+                }
+            }
+           // createJuliaScriptFile(input,"./Pruebas/",jobThreadID+"_DataDVH_"+n+".csv");
+           return csvFile;
+        }else{
+            System.out.println("File "+csvFile+" already exist, please delete this file or change number in file ");
+            return "";
+        }
+        
+    }
+    
+    public static void writeToFile(String dirFile,String line)throws IOException{
+        File file =new File(dirFile);    
+
+        //if file doesnt exists, then create it    
+        if(!file.exists()){    
+            file.createNewFile();    
+            //System.out.println("New File Created Now");    
+        }    
+
+        //true = append file    
+            FileWriter fileWritter = new FileWriter(file,true);        
+            BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
+            bufferWritter.write(line);
+            bufferWritter.close();
+            fileWritter.close();
+    }
+    
+    public ArrayList<Double> readFileDVH(String dir) 
+            throws FileNotFoundException, IOException{
+        ArrayList<Double> testList = new ArrayList<Double>(); //dosis
+        //String sp="\t";
+        //String dir = "./test2-OptDVH_Rectum.txt";
+        File f = new File(dir);
+        BufferedReader fileIn = new BufferedReader(new FileReader(f));
+        String line = "";
+        line = fileIn.readLine();
+        int aux = 1;
+        while (line != null) {
+            if (!line.contains("%") && !line.contains("sum") && !line.contains("voxel") && !line.contains("inte") && !line.contains(":=") && !line.contains("[") && !line.contains("]")) {
+                String[] auxReader = line.split("\\s");
+                for (int i = 0; i < auxReader.length; i++) {
+                    if (!auxReader[i].equals("")) {
+                        if ((aux % 2) == 0) {
+                            //System.out.println("i= "+i+" value= "+auxReader[i]);
+                            testList.add(Double.parseDouble(auxReader[i]));
+                        }
+                        aux++;
+                    }
+                }
+            }
+            line = fileIn.readLine();
+        }
+        fileIn.close();
+        Collections.sort(testList);
+        return testList;
+    }
+    
+    // Parallel runs
+    public class parallelNeighbour implements Callable<TreatmentPlan> {
+        private int[] auxAngles;
+        private TreatmentPlan sol;
+        private final String cFile;
+        private final String processName;
+        private Organs[] org;
+        private int[] params;
+
+        public parallelNeighbour(int[] auxAng, TreatmentPlan currentSol, String cF, String neighbourNum, int[] params){
+            Thread.currentThread().setName(neighbourNum);
+            this.processName = jobID + "_" + Thread.currentThread().getName();
+            System.out.println("Generating Neighbour Num: " + processName);
+            auxAngles = new int[auxAng.length];
+            System.arraycopy(auxAng, 0, auxAngles, 0, auxAngles.length);
+            this.params = new int[params.length];
+            System.arraycopy(params, 0, this.params, 0, params.length);
+            sol = new TreatmentPlan(currentSol);
+            cFile = cF;
+        }
+
+        @Override
+        public TreatmentPlan call() throws Exception {
+            int angle;    
+            TreatmentPlan neighbour = new TreatmentPlan(sol);
+
+            for (int j = 0; j<auxAngles.length;j++){
+                neighbour.selAngles[j] = auxAngles[j];
+            }
+            synchronized(neighbour){
+                neighbour.generateDDM(pathFile);
+                for(int ind: neighbour.getOrganos().keySet()){
+                        Organs organos = neighbour.getOrganos().get(ind);
+                        organos.writeMapVoxel(this.processName,neighbour.selAngles);
+                    }
+                //generateDDM(neighbour, this.processName);
+            }
+
+            neighbour.generateReferencePoint_ajust(sol.getOrganos(), 0, solver, maxX, 1, this.processName,params);
+            //neighbour.getVxDx(this.processName, this.org, Vx, Dx);
+            //synchronized(visitedBACs){
+                //addNewVisitedBAC(neighbour); //Add Angles and Reference Point
+            //    generatedBACs.add(neighbour);
+            //}
+            totalObjFuncEval++;
+
+            neighbour.printSol(cFile);
+            neighbour.liberateMemory();
+            Organs[] organos = new Organs[neighbour.getOrganos().size()];
+            int cont = 0;
+            for(int ind: neighbour.getOrganos().keySet()){
+                organos[cont] = neighbour.getOrganos().get(ind);
+                cont++;
+            }
+            createDVH_CSV(organos,this.processName,params); //Maicholl archivo
+            
+            
+
+            return neighbour;
+        }
+    }
+    public static ExecutorService newFixedThreadPool(int nThreads){
+    
+        return new ThreadPoolExecutor(nThreads,nThreads,0L,TimeUnit.MILLISECONDS,new LinkedBlockingQueue<Runnable>());
+    }
 }
+
