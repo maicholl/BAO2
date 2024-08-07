@@ -1,5 +1,0 @@
-############## ITER 21##############
-Total Obj. Func. Eval.      :	90
-Total Time (secs)           :	1769
-Total Objective Function Evaluations (Cummulative):	1960
-Total Time (cummulative):	40469113

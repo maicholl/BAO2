@@ -1,5 +1,0 @@
-############## ITER 3##############
-Total Obj. Func. Eval.      :	10
-Total Time (secs)           :	1743
-Total Objective Function Evaluations (Cummulative):	45
-Total Time (cummulative):	9546799

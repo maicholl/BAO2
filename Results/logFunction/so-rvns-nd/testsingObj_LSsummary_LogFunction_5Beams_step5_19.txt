@@ -1,5 +1,0 @@
-############## ITER 19##############
-Total Obj. Func. Eval.      :	50
-Total Time (secs)           :	1028
-Total Objective Function Evaluations (Cummulative):	1790
-Total Time (cummulative):	36885014

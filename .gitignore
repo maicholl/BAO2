@@ -16,3 +16,7 @@ inputFile_[1].txt
 *.dat
 *.mod
 *.sh
+/DDM_CERR/
+/DDM_TRT004/
+/DVHs/
+/checkFiles/*

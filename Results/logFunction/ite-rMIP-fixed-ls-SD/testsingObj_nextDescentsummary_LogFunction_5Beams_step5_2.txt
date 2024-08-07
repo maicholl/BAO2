@@ -1,5 +1,0 @@
-############## ITER 2##############
-Total Obj. Func. Eval.      :	25
-Total Time (secs)           :	13041
-Total Objective Function Evaluations (Cummulative):	80
-Total Time (cummulative):	41312976

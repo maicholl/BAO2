@@ -4,7 +4,7 @@
 %
 %
 %Firstly the number of Organs and Angles is read
-3	5
+4	5
 %
 % TIPO DE PROBLEMA SINGLE OBJECTIVE "SO" O MULTI OBJECTIVE "MO"
 SO
@@ -13,32 +13,43 @@ SO
 % TIPO DE MO  rVNS    "MOrVNS"  usa cada nieghbour en cada generación
 MOrVNS
 % TIPO DE ESTRATEGIA STEEPEST DESCENT "SD" O NEXT DESCENT "ND"
-ND
+SD
 % TIPO DE BUSQUEDA SI ES USADO EL RELAXED MIP "true" OR "false"
 false
+% NÚMERO DE ÁNGULOS PERMITIDOS
+72
 % NZ -> USING WARM START "true" WILL USE THE LAST NEIGHBOUR x VALUES, "false" DON'T USE WARM START [ONLY WORK ON KNITRO]
-true
+false
 %Names of Organs, Index (an autoIncr integer number), VoxelInit (default 0), VoxelEnd(default 0), totalDose, ActualMinDose, actualMaxDose, DoseUB, DoseLB, a, v (for Wu et al. formula), totalVoxels, isTarget (boolean). For CERR example, we use PTVHD, Rectum and Bladder. For TRT001 we use LECHOPROST, Recto and Vejiga.
 %LECHOPROST	0	0.5	0	0	0	0	85	60	76	-10	12	0	true
 %RECTO	1	0.35	0	0	0	0	60	0	60	8	8	0	false
 %VEJIGA	2	0.15	0	0	0	0	65	0	65	2	5	0	false
 %Names of Organs, Index (an autoIncr integer number), VoxelInit (default 0), VoxelEnd(default 0), totalDose, ActualMinDose, actualMaxDose, DoseUB, DoseLB, a, v (for Wu et al. formula), totalVoxels, isTarget (boolean). For CERR example, we use PTVHD, Rectum and Bladder. For TRT001 we use LECHOPROST, Recto and Vejiga.
-PTVHD	0	0.5	0	0	0	85	60	76	-10	12	0	true
+%PTVHD	0	0.5	0	0	0	85	60	76	-10	12	0	true
+%RECTUM	1	0.35	0	0	0	60	0	60	8	8	0	false
+%BLADDER	2	0.15	0	0	0	65	0	65	2	5	0	false
+%SKIN	3	0.15	0	0	0	45	0	45	2	5	0	false
+PTVHD	0	0.5	0	0	0	77	60	76	-100	12	0	true
 RECTUM	1	0.35	0	0	0	60	0	60	8	8	0	false
 BLADDER	2	0.15	0	0	0	65	0	65	2	5	0	false
+SKIN	3	0.15	0	0	0	45	0	45	8	5	0	false
+%FEMUR_LEFT	3	0.15	0	0	0	40	0	40	2	5	0	false
+%FEMUR_RIGHT	4	0.15	0	0	0	40	0	40	2	5	0	false
+%SEMINAL_VESICLES	5	0.15	0	0	0	60	0	60	2	5	0	false
 %Names of Organs, Index (an autoIncr integer number), VoxelInit (default 0), VoxelEnd(default 0), totalDose, ActualMinDose, actualMaxDose, DoseUB, DoseLB, a, v (for Wu et al. formula), totalVoxels, isTarget (boolean). For CERR example, we use PTVHD, Rectum and Bladder. For TRT001 we use LECHOPROST, Recto and Vejiga.
 %PROSTATA	0	0.5	0	0	0	0	85	60	76	-10	12	0	true
 %RECTO	1	0.35	0	0	0	0	60	0	60	8	8	0	false
 %VEJIGA	2	0.15	0	0	0	0	65	0	65	2	5	0	false
 %
 %PathFile, the path to the case data files 
-../CERR_Prostate/
+../CERR_Prostate_6_OAR/
+%../CERR_Prostate/
 %../TRT001/
 %
 %Option, objectiveFuntion to be used. 1 means logFunction, 2 Lexico Rectum, 3 Lexico Bladder, 4 Inverse Function, 9 cuadratic
 1
 %Selection Criterion SO: 0 = 'rVNS', 1 = 'all-neighbours' LS, 2 = iterative fixed rMIP_LS, 3 = 'seq_sel_LS' FMO Manual LS, 4 = ite_fixed_rMIP_geom_restr_LS,5 = VND
-0
+99
 %Para el movimiento de VNS 
 %Seleccione el tipo de VNS
 %1-. VND
@@ -58,7 +69,7 @@ BLADDER	2	0.15	0	0	0	65	0	65	2	5	0	false
 5
 %
 %iterations, number of sequential LS. Default is 1. In case no enough computational resources are available, 'iterations' can be bigger so local optima would be generated sequentially. This would take longer though. 
-10
+1
 %
 %Solver
 knitro
@@ -105,7 +116,18 @@ true
 %95	255	120	210	205
 %275	75	300	30	25
 %120	125	150	250	275
-%
+% rVNS_SD 0.60098
+%95	105	150	215	245
+% rVNS_ND 0.60937
+%110	125	185	255	330
+% VND_N1_N2_ND 0.59750
+%75	120	220	275	330
+% VND_N1_N2_SD 0.59349
+%120	215	255	275	330
+% VND_N2_N1_ND 0.59040
+%95	120	160	220	255
+% VND_N2_N1_SD 0.5896889
+%100	120	150	215	255
 5	105	185	230	310
 60	110	210	255	335
 60	140	155	255	355

@@ -1,5 +1,0 @@
-############## ITER 5##############
-Total Obj. Func. Eval.      :	25
-Total Time (secs)           :	12526
-Total Objective Function Evaluations (Cummulative):	160
-Total Time (cummulative):	82029437

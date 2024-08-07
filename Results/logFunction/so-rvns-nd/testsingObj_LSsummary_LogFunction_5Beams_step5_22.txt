@@ -1,5 +1,0 @@
-############## ITER 22##############
-Total Obj. Func. Eval.      :	70
-Total Time (secs)           :	1410
-Total Objective Function Evaluations (Cummulative):	2030
-Total Time (cummulative):	42034037
